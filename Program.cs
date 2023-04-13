@@ -7,7 +7,7 @@
     
     for (; i < marbleRun.Length; segments++)
     {
-        if (IsValidMarbleRun(visitedPositions, i))
+        if (!IsValidMarbleRun(visitedPositions, i))
         {
             Console.WriteLine("Infinite loop detected. Run aborted.");
             return;
@@ -32,7 +32,7 @@
 #endregion
 
 #region Methods
-bool IsValidMarbleRun(HashSet<int> visitedPositions, int currentPosition) => visitedPositions.Contains(currentPosition);
+bool IsValidMarbleRun(HashSet<int> visitedPositions, int currentPosition) => !visitedPositions.Contains(currentPosition);
 
 int GetTeleport(string marbleRun, int index)
 {
