@@ -3,8 +3,8 @@
     string marbleRun = args[0];
 
     var visitedPositions = new HashSet<int>();
-
     int segments = 0, teleports = 0, i = 0;
+    
     for (; i < marbleRun.Length; segments++)
     {
         if (IsValidMarbleRun(visitedPositions, i))
